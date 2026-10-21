@@ -1,4 +1,3 @@
-
 name: DevSecOps Pipeline
 
 on:
@@ -53,7 +52,7 @@ jobs:
         run: bandit -r app -f json -o bandit-report.json --exit-zero
 
       - name: Enforce Quality Gate
-        run: python quality_gate.py
+        run: python tests/quality_gate.py
 
       - name: Upload SAST Report
         if: always()
